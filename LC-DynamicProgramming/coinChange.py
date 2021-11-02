@@ -2,7 +2,7 @@
 
 # T.C: O(n * len(n))
 # S.C: O(n)
-# Bottom up dynamic programming approach.
+# Bottom up dynamic programming approach with cacheing
 # So we're going to start at amount of 0 instead of working from 7 and down
 # (This is because it would result in DFS brute force to check for every possible solution)
 # SO we're going to create an array length = amount + 1(because we have to consider the base case of 0)
@@ -25,7 +25,6 @@ class Solution:
                 if a - c >= 0:
                     dp[a] = min(dp[a], 1 + dp[a - c])
 
-        print(dp)
         return dp[amount] if dp[amount] != amount + 1 else -1 
 
 
